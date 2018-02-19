@@ -1,0 +1,17 @@
+language: python
+
+sudo: true
+
+python:
+    - "3.6"
+
+install:
+  - pip install -r requirements.txt
+
+script:
+  # run all tests and generate coverage
+  - nose2 --with-coverage --coverage ./coin_changer
+
+after_success:
+  # call codecov from project root
+  - codecov

@@ -1,0 +1,4 @@
+setuptools==18.5
+nose2
+codecov
+cerberus
