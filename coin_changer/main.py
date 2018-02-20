@@ -5,6 +5,8 @@
 
 
 from change_maker import ChangeMaker
+from coins_reader import CoinsReader
+import config as config
 
 def main():
     """1. Read coins set from coins
@@ -16,7 +18,8 @@ def main():
     target_amount = 24
 
     # read coins
-    coins = [1, 2, 5, 10, 20, 50]
+    coins_reader = CoinsReader(config.SETTING_DIR + '/coin_set.json')
+    coins = coins_reader.get_coin_set()
 
     # make change to a target amount
     change_maker = ChangeMaker(target_amount, coins)

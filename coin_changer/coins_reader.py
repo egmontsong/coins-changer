@@ -34,13 +34,12 @@ class CoinsReader(object):
         coins = []
 
         try:
-            with open(, 'rb') as coins_set_file:
+            with open(self.file_path, 'rb') as coins_set_file:
                 coins = json.load(coins_set_file)['coin_set']
-            tax_rate_file.close()
+            coins_set_file.close()
             return coins
 
         except IOError as e:
-            print e.errno, e.strerror
+            print(e.errno, e.strerror)
             return None
-
 
