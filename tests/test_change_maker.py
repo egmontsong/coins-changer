@@ -3,7 +3,6 @@
 """
 
 import unittest
-import coin_changer.config as config
 from coin_changer.change_maker import ChangeMaker
 
 
@@ -31,7 +30,7 @@ class TestChangeMaker(unittest.TestCase):
     def test_positive_flow_88(self):
         self.change_maker = ChangeMaker(88, self.coins)
         self.assertEqual(self.change_maker.make_change(), [1, 1, 1, 1, 1, 1])
-    
+
     def test_positive_flow_176(self):
         self.change_maker = ChangeMaker(176, self.coins)
         self.assertEqual(self.change_maker.make_change(), [1, 0, 1, 0, 1, 3])

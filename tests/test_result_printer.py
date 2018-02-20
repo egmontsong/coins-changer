@@ -18,7 +18,7 @@ class FormattedOutput(object):
             def __str__(self):
                 return "".join(self.data)
 
-                
+
 class TestResultPrinter(unittest.TestCase):
     """Test result printer
 
@@ -38,5 +38,5 @@ class TestResultPrinter(unittest.TestCase):
         finally:
             sys.stdout = stdout_org
             self.assertEqual(
-                str(self.formatted_output), 
+                str(self.formatted_output),
                 '3 * 50 cent coin\n1 * 10 cent coin\n1 * 1 cent coin\n')

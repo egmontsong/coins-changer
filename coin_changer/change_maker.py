@@ -22,7 +22,6 @@ class ChangeMaker(object):
         """return a list that indicates the required number of each value of coins
 
         """
-        
         if self.target_amount < 0:
             return 'Target amount must be positive.'
             

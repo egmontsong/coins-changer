@@ -22,14 +22,12 @@ def main():
     # read coins
     coins_reader = CoinsReader(config.SETTING_DIR + '/coin_set.json')
     coins = coins_reader.get_coin_set()
-    print(coins)
 
     # make change to a target amount
     change_maker = ChangeMaker(target_amount, coins)
     change = change_maker.make_change()
-    print(change)
 
-    # print formatted result 
+    # print formatted result
     result_printer = ResultPrinter(coins, change)
     result_printer.print_result()
 
