@@ -1,5 +1,6 @@
 # coins-changer
 [![Build Status](https://travis-ci.org/egmontsong/coins-changer.svg?branch=master)](https://travis-ci.org/egmontsong/coins-changer)
+[![codecov](https://codecov.io/gh/egmontsong/coins-changer/branch/master/graph/badge.svg)](https://codecov.io/gh/egmontsong/coins-changer)
 Coins changer based on dynamic programming algorithm
 
 ## Problem
