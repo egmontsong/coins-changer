@@ -31,3 +31,11 @@ class TestChangeMaker(unittest.TestCase):
     def test_positive_flow_88(self):
         self.change_maker = ChangeMaker(88, self.coins)
         self.assertEqual(self.change_maker.make_change(), [1, 1, 1, 1, 1, 1])
+    
+    def test_positive_flow_176(self):
+        self.change_maker = ChangeMaker(176, self.coins)
+        self.assertEqual(self.change_maker.make_change(), [1, 0, 1, 0, 1, 3])
+
+    def test_positive_flow_188(self):
+        self.change_maker = ChangeMaker(188, self.coins)
+        self.assertEqual(self.change_maker.make_change(), [1, 1, 1, 1, 1, 3])

@@ -8,16 +8,7 @@ import coin_changer.config as config
 from coin_changer.result_printer import ResultPrinter
 
 
-class TestResultPrinter(unittest.TestCase):
-    """Test result printer
-
-    """
-
-    def setUp(self):
-        self.coins = [1, 2, 5, 10, 20, 50]
-        self.change = [1, 0, 0, 1, 0, 3]
-
-        class FormattedOutput(object):
+class FormattedOutput(object):
             def __init__(self):
                 self.data = []
 
@@ -26,6 +17,16 @@ class TestResultPrinter(unittest.TestCase):
 
             def __str__(self):
                 return "".join(self.data)
+
+                
+class TestResultPrinter(unittest.TestCase):
+    """Test result printer
+
+    """
+
+    def setUp(self):
+        self.coins = [1, 2, 5, 10, 20, 50]
+        self.change = [1, 0, 0, 1, 0, 3]
         self.formatted_output = FormattedOutput()
 
     def test_print_result(self):
@@ -38,4 +39,4 @@ class TestResultPrinter(unittest.TestCase):
             sys.stdout = stdout_org
             self.assertEqual(
                 str(self.formatted_output), 
-                '3 * 50 cent coin\n1 * 20 cent coin\n1 * 10 cent coin\n')
+                '3 * 50 cent coin\n1 * 10 cent coin\n1 * 1 cent coin\n')
