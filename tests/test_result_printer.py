@@ -4,7 +4,6 @@
 
 import sys
 import unittest
-import coin_changer.config as config
 from coin_changer.result_printer import ResultPrinter
 
 
