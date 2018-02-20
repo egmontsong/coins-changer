@@ -1,6 +1,8 @@
 # coins-changer
 [![Build Status](https://travis-ci.org/egmontsong/coins-changer.svg?branch=master)](https://travis-ci.org/egmontsong/coins-changer)
 [![codecov](https://codecov.io/gh/egmontsong/coins-changer/branch/master/graph/badge.svg)](https://codecov.io/gh/egmontsong/coins-changer)
+
+
 Coins changer based on dynamic programming algorithm
 
 ## Problem
@@ -55,6 +57,20 @@ python coin_changer/main.py  # run with main
 ## Run Tests
 ### Run all tests
 ```bash
-                          # with missing lines no. indicated
+nose2
+nose2 --with-coverage                          # with coverage report
+nose2 --with-coverage --coverage ./coin_changer  # only show coverage to main package
+coverage report -m                             # with missing lines no. indicated
 ```
 
+## Tools
+### [Nose2](https://github.com/nose-devs/nose2)
+The successor to nose, based on unittest2.
+
+
+### [Pipreqs](https://github.com/bndr/pipreqs)
+Generate requirements.txt file for any project based on imports.
+```bash
+pipreqs ./ 
+# generate requirements.txt based on all files in current directory.
+```
