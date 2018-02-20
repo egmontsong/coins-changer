@@ -22,7 +22,6 @@ class ResultPrinter(object):
         """return the formatted result (a dictionary)
 
         """
-        change_dict = dict(zip([coin for coin in self.coins_set[::-1] if coin > 0], [
-                           quantity for quantity in self.change[::-1] if quantity > 0]))
+        change_dict = dict(zip(self.coins_set[::-1], self.change[::-1]))
         {print(str(value) + ' * ' + str(key) + ' cent coin')
-         for key, value in change_dict.items()}
+         for key, value in change_dict.items() if value > 0}

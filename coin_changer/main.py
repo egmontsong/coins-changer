@@ -6,24 +6,32 @@
 
 from change_maker import ChangeMaker
 from coins_reader import CoinsReader
+from result_printer import ResultPrinter
 import config as config
 
 def main():
-    """1. Read coins set from coins
-       2. make change to a target amount
-       3. Output a list of requied coins and their quantities.
+    """1. Capture input target amount
+       2. Read coins set from coins
+       3. make change to a target amount
+       4. Output a list of requied coins and their quantities.
 
     """
 
-    target_amount = 24
+    target_amount = int(input("Enter your change in cents:\n"))
 
     # read coins
     coins_reader = CoinsReader(config.SETTING_DIR + '/coin_set.json')
     coins = coins_reader.get_coin_set()
+    print(coins)
 
     # make change to a target amount
     change_maker = ChangeMaker(target_amount, coins)
-    print(change_maker.make_change())
+    change = change_maker.make_change()
+    print(change)
+
+    # print formatted result 
+    result_printer = ResultPrinter(coins, change)
+    result_printer.print_result()
 
 
 if __name__ == '__main__':
