@@ -1,5 +1,5 @@
 # coins-changer
-[![Build Status](https://travis-ci.org/egmontsong/coin-change.svg?branch=master)](https://travis-ci.org/egmontsong/coin-change)
+[![Build Status](https://travis-ci.org/egmontsong/coins-changer.svg?branch=master)](https://travis-ci.org/egmontsong/coins-changer)
 Coins changer based on dynamic programming algorithm
 
 ## Problem
@@ -28,3 +28,32 @@ Another example:
 > 1 * 5 cent coin
 > 1 * 2 cent coin
 > 1 * 1 cent coin
+
+## Features
+* CI integration with Travis.
+* Follows PEP8 code style and Google Docstrings style for Python.
+
+## How to use it
+### Install dependencies
+```bash
+# Use virtualenv (recommended)
+pip install virtualenv
+virtualenv venv --python=python3.6
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+### Run with command line
+```bash
+# in root 
+python coin_changer/main.py  # run with main
+```
+
+## Run Tests
+### Run all tests
+```bash
+                          # with missing lines no. indicated
+```
+
