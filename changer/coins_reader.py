@@ -42,8 +42,7 @@ class CoinsReader(object):
             else:
                 print('Coin must be positive value.')
                 return None
-            
+
         except IOError as e:
             print(e.strerror)
             return None
-

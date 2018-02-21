@@ -2,11 +2,10 @@
 """This module tests result printer.
 """
 
-import sys
 from io import StringIO
 from unittest import TestCase
 from unittest.mock import patch
-from coin_changer.result_printer import ResultPrinter
+from changer.result_printer import ResultPrinter
 
 
 class TestResultPrinter(TestCase):
@@ -27,7 +26,7 @@ class TestResultPrinter(TestCase):
         self.assertEqual(
                 mock_stdout.getvalue(),
                 '3 * 50 cent coin\n1 * 10 cent coin\n1 * 1 cent coin\n')
-    
+
     @patch('sys.stdout', new_callable=StringIO)
     def test_print_zero_result(self, mock_stdout):
         self.result_printer = ResultPrinter(self.coins, self.zero_change)

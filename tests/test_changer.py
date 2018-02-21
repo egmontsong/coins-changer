@@ -5,7 +5,7 @@
 import sys
 from unittest.mock import patch
 from unittest import TestCase
-from coin_changer.changer import Changer
+from changer.changer import Changer
 
 
 class FormattedOutput(object):
@@ -18,7 +18,7 @@ class FormattedOutput(object):
             def __str__(self):
                 return "".join(self.data)
 
-        
+
 class Test(TestCase):
 
     def setUp(self):

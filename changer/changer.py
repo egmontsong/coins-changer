@@ -12,6 +12,7 @@ import config as config
 
 class Changer(object):
 
+    @classmethod
     def run(args):
         """1. Capture input target amount
         2. Read coins set from coins

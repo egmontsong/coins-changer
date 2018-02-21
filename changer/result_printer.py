@@ -30,7 +30,7 @@ class ResultPrinter(object):
             return False
         else:
             return True
-    
+
     def print_result(self):
         """return the formatted result (a dictionary)
 

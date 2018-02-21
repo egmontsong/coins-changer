@@ -2,11 +2,10 @@
 """This module tests change maker.
 """
 
-import sys
 from io import StringIO
 from unittest import TestCase
 from unittest.mock import patch
-from coin_changer.change_maker import ChangeMaker
+from changer.change_maker import ChangeMaker
 
 
 class TestChangeMaker(TestCase):
@@ -16,7 +15,7 @@ class TestChangeMaker(TestCase):
 
     def setUp(self):
         self.coins = [1, 2, 5, 10, 20, 50]
-    
+
     @patch('sys.stdout', new_callable=StringIO)
     def test_negative_flow(self, mock_stdout):
         self.change_maker = ChangeMaker(-1, self.coins)

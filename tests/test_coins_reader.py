@@ -2,12 +2,11 @@
 """This module tests change maker.
 """
 
-import sys
 from io import StringIO
 from unittest import TestCase
 from unittest.mock import patch
-import coin_changer.config as config
-from coin_changer.coins_reader import CoinsReader
+import changer.config as config
+from changer.coins_reader import CoinsReader
 
 
 class TestCoinsReader(TestCase):
@@ -26,7 +25,7 @@ class TestCoinsReader(TestCase):
         self.coins_reader = CoinsReader(config.SETTING_DIR + '/coin_set.json')
         self.assertEqual(self.coins_reader.get_coin_set(),
                          [1, 2, 5, 10, 20, 50])
-    
+
     @patch('sys.stdout', new_callable=StringIO)
     def test_negative_file_not_exist(self, mock_stdout):
         self.coins_reader = CoinsReader(config.SETTING_DIR + '/not_exist.json')
