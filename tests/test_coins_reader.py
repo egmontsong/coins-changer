@@ -2,12 +2,12 @@
 """This module tests change maker.
 """
 
-import unittest
+from unittest import TestCase
 import coin_changer.config as config
 from coin_changer.coins_reader import CoinsReader
 
 
-class TestCoinsReader(unittest.TestCase):
+class TestCoinsReader(TestCase):
     """Test coins reader
 
     """

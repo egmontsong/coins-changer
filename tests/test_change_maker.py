@@ -2,22 +2,28 @@
 """This module tests change maker.
 """
 
-import unittest
+import sys
+from io import StringIO
+from unittest import TestCase
+from unittest.mock import patch
 from coin_changer.change_maker import ChangeMaker
 
 
-class TestChangeMaker(unittest.TestCase):
+class TestChangeMaker(TestCase):
     """Test change maker
 
     """
 
     def setUp(self):
         self.coins = [1, 2, 5, 10, 20, 50]
-
-    def test_negative_flow(self):
+    
+    @patch('sys.stdout', new_callable=StringIO)
+    def test_negative_flow(self, mock_stdout):
         self.change_maker = ChangeMaker(-1, self.coins)
-        self.assertEqual(self.change_maker.make_change(),
-                         'Target amount must be positive.')
+        self.change_maker.make_change()
+        self.assertEqual(
+                mock_stdout.getvalue(),
+                'Target amount must be positive.\n')
 
     def test_zero_flow(self):
         self.change_maker = ChangeMaker(0, self.coins)

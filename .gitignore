@@ -102,3 +102,5 @@ ENV/
 
 # vcode
 **/.vscode/
+
+**/.DS_Store
