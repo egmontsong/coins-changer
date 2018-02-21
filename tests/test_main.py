@@ -3,12 +3,9 @@
 """
 
 import sys
-import os
-sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
-print(sys.path)
 from unittest.mock import patch
 from unittest import TestCase
-from coin_changer.main import Main
+from coin_changer.changer import Changer
 
 
 class FormattedOutput(object):
@@ -26,7 +23,7 @@ class Test(TestCase):
 
     def setUp(self):
         self.formatted_output = FormattedOutput()
-        self.main = Main()
+        self.changer = Changer()
 
    
     @patch('builtins.input', return_value=24)
@@ -34,7 +31,7 @@ class Test(TestCase):
         stdout_org = sys.stdout
         try:
             sys.stdout = self.formatted_output
-            self.main.main()
+            self.changer.run()
         finally:
             sys.stdout = stdout_org
             self.assertEqual(

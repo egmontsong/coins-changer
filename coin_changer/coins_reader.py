@@ -37,10 +37,13 @@ class CoinsReader(object):
             with open(self.file_path, 'rb') as coins_set_file:
                 coins = json.load(coins_set_file)['coin_set']
             coins_set_file.close()
-            if len([value for value in coins if value < 0]) > 0:
-                return 'Coin must be positive value.'
-            return coins
-
+            if len([value for value in coins if value < 0]) == 0:
+                return coins
+            else:
+                print('Coin must be positive value.')
+                return None
+            
         except IOError as e:
-            return e.strerror
+            print(e.strerror)
+            return None
 
