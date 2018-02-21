@@ -10,7 +10,7 @@ install:
 
 script:
   # run all tests and generate coverage
-  - nose2 --with-coverage --coverage ./coin_changer
+  - nose2 --with-coverage --coverage ./changer
 
 after_success:
   # call codecov from project root
