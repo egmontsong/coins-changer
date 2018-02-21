@@ -53,7 +53,7 @@ pip install -r requirements.txt
 ### Run with command line
 ```bash
 # in root 
-python coin_changer/main.py  # run with main
+python changer/changer.py  # run with main
 ```
 
 ## Run Tests
@@ -61,7 +61,7 @@ python coin_changer/main.py  # run with main
 ```bash
 nose2
 nose2 --with-coverage                          # with coverage report
-nose2 --with-coverage --coverage ./coin_changer  # only show coverage to main package
+nose2 --with-coverage --coverage ./changer  # only show coverage to main package
 coverage report -m                             # with missing lines no. indicated
 ```
 

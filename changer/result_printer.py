@@ -22,7 +22,9 @@ class ResultPrinter(object):
         """return if chagne is valid to print
 
         """
-        if len([value for value in self.change if value == 0]) == len(self.coins):
+        if self.change == None:
+            return False
+        elif len([value for value in self.change if value == 0]) == len(self.coins):
             print('No change needed.')
             return False
         elif len([value for value in self.change if value < 0]) > 0:
