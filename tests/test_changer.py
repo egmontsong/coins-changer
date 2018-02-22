@@ -37,3 +37,27 @@ class Test(TestCase):
             self.assertEqual(
                 str(self.formatted_output),
                 '1 * 20 cent coin\n2 * 2 cent coin\n')
+
+    @patch('builtins.input', return_value=-24)
+    def test_negative_flow_m24(self, input):
+        stdout_org = sys.stdout
+        try:
+            sys.stdout = self.formatted_output
+            self.changer.run()
+        finally:
+            sys.stdout = stdout_org
+            self.assertEqual(
+                str(self.formatted_output),
+                'Target amount must be positive integer.\n')
+
+    @patch('builtins.input', return_value='string')
+    def test_negative_flow_string(self, input):
+        stdout_org = sys.stdout
+        try:
+            sys.stdout = self.formatted_output
+            self.changer.run()
+        finally:
+            sys.stdout = stdout_org
+            self.assertEqual(
+                str(self.formatted_output),
+                'This was not a number, please try again.\n')

@@ -18,12 +18,22 @@ class ChangeMaker(object):
         self.target_amount = target_amount
         self.coins = coins
 
+    def __validate_target_amount(self):
+        """return True if target amount is valid to process a change
+
+        """
+        if self.target_amount < 0:
+            print('Target amount must be positive integer.')
+            return False
+        else:
+            self.target_amount = int(self.target_amount)
+            return True
+
     def make_change(self):
         """return a list that indicates the required number of each value of coins
 
         """
-        if self.target_amount < 0:
-            print('Target amount must be positive.')
+        if self.__validate_target_amount() is False:
             return None
 
         # assign 'inf' to all cells to make sure they are greater than i

@@ -21,7 +21,11 @@ class Changer(object):
 
         """
 
-        target_amount = int(input("Enter your change in cents:\n"))
+        try:
+            target_amount = int(input("Enter your change in cents:\n"))
+        except ValueError:
+            print("This was not a number, please try again.")
+            return None
 
         # read coins
         coins_reader = CoinsReader(config.SETTING_DIR + '/coin_set.json')
