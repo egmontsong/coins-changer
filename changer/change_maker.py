@@ -25,7 +25,6 @@ class ChangeMaker(object):
         if self.target_amount < 0:
             print('Target amount must be positive.')
             return None
-            
 
         # assign 'inf' to all cells to make sure they are greater than i
         # min_combos[i] is smallest set of coins to target i.

@@ -34,7 +34,7 @@ class TestResultPrinter(TestCase):
         self.assertEqual(
                 mock_stdout.getvalue(),
                 'No change needed.\n')
-    
+
     @patch('sys.stdout', new_callable=StringIO)
     def test_print_negative_result(self, mock_stdout):
         self.result_printer = ResultPrinter(self.coins, self.negative_change)

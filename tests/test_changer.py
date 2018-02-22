@@ -25,7 +25,7 @@ class Test(TestCase):
         self.formatted_output = FormattedOutput()
         self.changer = Changer()
 
-   
+
     @patch('builtins.input', return_value=24)
     def test_positive_flow_24(self, input):
         stdout_org = sys.stdout

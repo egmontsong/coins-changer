@@ -39,7 +39,6 @@ class ResultPrinter(object):
         """
         if self.__validate_change() is False:
             return None
-            
 
         change_dict = dict(zip(self.coins[::-1], self.change[::-1]))
         formatted_result = {print(str(value) + ' * ' + str(key) + ' cent coin')
