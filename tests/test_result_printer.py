@@ -21,6 +21,12 @@ class TestResultPrinter(TestCase):
 
     @patch('sys.stdout', new_callable=StringIO)
     def test_print_positive_result(self, mock_stdout):
+        """when change result is [1, 0, 0, 1, 0, 3],
+           program should print:
+           3 * 50 cent coin
+           1 * 10 cent coin
+           1 * 1 cent coin
+        """
         self.result_printer = ResultPrinter(self.coins, self.positive_change)
         self.result_printer.print_result()
         self.assertEqual(
@@ -29,6 +35,10 @@ class TestResultPrinter(TestCase):
 
     @patch('sys.stdout', new_callable=StringIO)
     def test_print_zero_result(self, mock_stdout):
+        """when change result is [0, 0, 0, 0, 0, 0],
+           program should print:
+           'No change needed.'
+        """
         self.result_printer = ResultPrinter(self.coins, self.zero_change)
         self.result_printer.print_result()
         self.assertEqual(
@@ -37,6 +47,10 @@ class TestResultPrinter(TestCase):
 
     @patch('sys.stdout', new_callable=StringIO)
     def test_print_negative_result(self, mock_stdout):
+        """when change result has negative value [1, 0, 0, -1, 0, 3],
+           program should print:
+           'Quantity of coins must be positive.'
+        """
         self.result_printer = ResultPrinter(self.coins, self.negative_change)
         self.result_printer.print_result()
         self.assertEqual(

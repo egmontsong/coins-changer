@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""This module tests main function.
+"""This module tests changer function.
 """
 
 import sys
@@ -28,6 +28,10 @@ class Test(TestCase):
 
     @patch('builtins.input', return_value=24)
     def test_positive_flow_24(self, input):
+        """when input is 24, the result should be:
+           1 * 20 cent coin
+           2 * 2 cent coin
+        """
         stdout_org = sys.stdout
         try:
             sys.stdout = self.formatted_output
@@ -40,6 +44,9 @@ class Test(TestCase):
 
     @patch('builtins.input', return_value=-24)
     def test_negative_flow_m24(self, input):
+        """when input is -24, the result should be:
+           'Target amount must be positive integer.'
+        """
         stdout_org = sys.stdout
         try:
             sys.stdout = self.formatted_output
@@ -52,6 +59,9 @@ class Test(TestCase):
 
     @patch('builtins.input', return_value='string')
     def test_negative_flow_string(self, input):
+        """when input is string, the result should be:
+           'This was not a number, please try again.'
+        """
         stdout_org = sys.stdout
         try:
             sys.stdout = self.formatted_output

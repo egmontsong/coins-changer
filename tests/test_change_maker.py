@@ -20,10 +20,10 @@ class TestChangeMaker(TestCase):
     def test_negative_flow(self, mock_stdout):
         """when target amount is -1, program should print
            'Target amount must be positive integer.'
-        
+
         Decorators:
             patch: capture system stdout        
-        
+
         Arguments:
             mock_stdout {string} -- mock stdout for assertion
         """

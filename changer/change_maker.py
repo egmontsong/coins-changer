@@ -37,12 +37,13 @@ class ChangeMaker(object):
             return None
 
         # assign 'inf' to all cells to make sure they are greater than i
-        # min_combos[i] is smallest set of coins to target i.
+        # min_combos[i] is smallest set of coins sum to target i.
         min_combos = [0] + [float('inf')] * self.target_amount
 
-        # to memorise the all previous best combos, a table is used to record
-        # the result.
-        # combos[i][j] is the number of coins for coin value j to target i
+        # to memorise the all previous best combos, a table(combos[i][j]) 
+        # is used to record the result.
+        # combos[i][j] is the quantity of coins(coin value j) that is needed 
+        # to sum to target i
         combos = [[0] * len(self.coins)] * (self.target_amount + 1)
 
         # start from 1 as 0 is already solved
