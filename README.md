@@ -1,7 +1,7 @@
 # money-changer
-[![Build Status](https://travis-ci.org/egmontsong/coins-changer.svg?branch=master)](https://travis-ci.org/egmontsong/coins-changer)
-[![codecov](https://codecov.io/gh/egmontsong/coins-changer/branch/master/graph/badge.svg)](https://codecov.io/gh/egmontsong/coins-changer)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/bdcbe53edebf44baa6b1b8602ac1833a)](https://www.codacy.com/app/egmontsong/coins-changer?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=egmontsong/coins-changer&amp;utm_campaign=Badge_Grade)
+[![Build Status](https://travis-ci.org/egmontsong/money-changer.svg?branch=master)](https://travis-ci.org/egmontsong/money-changer)
+[![codecov](https://codecov.io/gh/egmontsong/money-changer/branch/master/graph/badge.svg)](https://codecov.io/gh/egmontsong/money-changer)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/bdcbe53edebf44baa6b1b8602ac1833a)](https://www.codacy.com/app/egmontsong/money-changer?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=egmontsong/money-changer&amp;utm_campaign=Badge_Grade)
 [![codebeat badge](https://codebeat.co/badges/75096f68-25ac-402d-b1ed-fbe2fb201275)](https://codebeat.co/projects/github-com-egmontsong-coins-changer-master)
 
 
