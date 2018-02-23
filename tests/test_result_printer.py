@@ -31,7 +31,7 @@ class TestResultPrinter(TestCase):
         self.result_printer.print_result()
         self.assertEqual(
                 mock_stdout.getvalue(),
-                '3 * 50 cent coin\n1 * 10 cent coin\n1 * 1 cent coin\n')
+                '> 3 * 50 cent coin\n> 1 * 10 cent coin\n> 1 * 1 cent coin\n')
 
     @patch('sys.stdout', new_callable=StringIO)
     def test_print_zero_result(self, mock_stdout):

@@ -41,6 +41,5 @@ class ResultPrinter(object):
             return None
 
         change_dict = dict(zip(self.coins[::-1], self.change[::-1]))
-        formatted_result = {print(str(value) + ' * ' + str(key) + ' cent coin')
-                            for key, value in change_dict.items() if value > 0}
-        return formatted_result
+        {print('> ' + str(value) + ' * ' + str(key) + ' cent coin')
+         for key, value in change_dict.items() if value > 0}

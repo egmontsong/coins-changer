@@ -22,7 +22,7 @@ class Changer(object):
         """
 
         try:
-            target_amount = int(input("Enter your change in cents:\n"))
+            target_amount = int(input("> Enter your change in cents:\n> "))
         except ValueError:
             print("This was not a number, please try again.")
             return None

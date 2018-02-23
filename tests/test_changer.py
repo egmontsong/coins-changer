@@ -40,7 +40,7 @@ class Test(TestCase):
             sys.stdout = stdout_org
             self.assertEqual(
                 str(self.formatted_output),
-                '1 * 20 cent coin\n2 * 2 cent coin\n')
+                '> 1 * 20 cent coin\n> 2 * 2 cent coin\n')
 
     @patch('builtins.input', return_value=-24)
     def test_negative_flow_m24(self, input):

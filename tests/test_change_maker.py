@@ -22,7 +22,7 @@ class TestChangeMaker(TestCase):
            'Target amount must be positive integer.'
 
         Decorators:
-            patch: capture system stdout        
+            patch: capture system stdout
 
         Arguments:
             mock_stdout {string} -- mock stdout for assertion

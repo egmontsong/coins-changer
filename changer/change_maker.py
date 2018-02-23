@@ -40,9 +40,9 @@ class ChangeMaker(object):
         # min_combos[i] is smallest set of coins sum to target i.
         min_combos = [0] + [float('inf')] * self.target_amount
 
-        # to memorise the all previous best combos, a table(combos[i][j]) 
+        # to memorise the all previous best combos, a table(combos[i][j])
         # is used to record the result.
-        # combos[i][j] is the quantity of coins(coin value j) that is needed 
+        # combos[i][j] is the quantity of coins(coin value j) that is needed
         # to sum to target i
         combos = [[0] * len(self.coins)] * (self.target_amount + 1)
 
