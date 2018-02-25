@@ -27,7 +27,7 @@ class Changer(object):
             print("This was not a number, please try again.")
             return None
 
-        # read coins
+        # read coins set
         coins_reader = CoinsReader(config.SETTING_DIR + '/coin_set.json')
         coins = coins_reader.get_coin_set()
 
