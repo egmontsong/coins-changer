@@ -56,7 +56,7 @@ class Test(TestCase):
             self.assertEqual(
                 str(self.formatted_output),
                 'Target amount must be positive integer.\n')
-    
+
     @patch('builtins.input', return_value=0)
     def test_negative_flow_zero(self, input):
         """when input is 0, the result should be:
